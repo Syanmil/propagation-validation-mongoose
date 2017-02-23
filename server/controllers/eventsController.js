@@ -31,7 +31,7 @@ module.exports = {
     },
     create: function (req, res) {
         var events = new eventsModel({			title : req.body.title,			createdAt : req.body.createdAt,			name : req.body.name,
-            userid: req.body.userid
+            email: req.body.email
         });
 
         events.save(function (err, events) {
@@ -59,7 +59,7 @@ module.exports = {
                 });
             }
 
-            events.title = req.body.title ? req.body.title : events.title;			events.createdAt = req.body.createdAt ? req.body.createdAt : events.createdAt;			events.name = req.body.name ? req.body.name : events.name;            events.userid = req.body.userid ? req.body.userid : events.userid
+            events.title = req.body.title ? req.body.title : events.title;			events.createdAt = req.body.createdAt ? req.body.createdAt : events.createdAt;			events.name = req.body.name ? req.body.name : events.name;            events.email = req.body.email ? req.body.email : events.email
             events.save(function (err, events) {
                 if (err) {
                     return res.status(500).json({
